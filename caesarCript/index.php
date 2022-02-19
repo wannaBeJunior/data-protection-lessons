@@ -5,6 +5,11 @@ if($_POST['msg'] && $_POST['shift'])
 {
     $encrypted = $class->encrypt($_POST['msg'], $_POST['shift']);
 }
+if($_POST['encrypted_msg'])
+{
+	$decrypted = $class->decrypt($_POST['encrypted_msg']);
+    //var_dump($decrypted);
+}
 ?>
 <!doctype html>
 <html lang="ru">
@@ -35,6 +40,26 @@ if($_POST['msg'] && $_POST['shift'])
 			?>
             <div class="alert alert-primary" role="alert">
 				<?=$encrypted?>
+            </div>
+			<?
+		}
+		?>
+    </form>
+</div>
+<div class="container">
+    <form action="index.php" method="post">
+        <p class="h2">Расшифровать сообщение:</p>
+        <label>Введите сообщение:</label>
+        <input type="text" name="encrypted_msg" value="<?=$_POST['encrypted_msg']?:''?>">
+        <!--<label>Введите сдвиг:</label>
+        <input type="number" name="shift" value="<?/*=$_POST['shift']?:''*/?>">-->
+        <input type="submit">
+		<?
+		if($decrypted != '')
+		{
+			?>
+            <div class="alert alert-primary" role="alert">
+				<?=$decrypted?>
             </div>
 			<?
 		}
