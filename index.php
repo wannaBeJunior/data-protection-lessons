@@ -10,5 +10,6 @@
 <body>
 	<a href="ex1">Первое задание</a>
 	<a href="caesarCript">Шифр Цезаря</a>
+    <a href="playfairCipher">Шифр Плейфера</a>
 </body>
 </html>
