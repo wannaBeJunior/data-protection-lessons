@@ -30,14 +30,14 @@ if($_POST['msg'] && $_POST['keyWord'])
 		<input type="text" name="keyWord" value="<?=$_POST['keyWord']?:''?>">
 		<input type="submit">
 		<?
-		if($encrypted != '')
-		{
+		//if($encrypted != '')
+		//{
 			?>
-			<div class="alert alert-primary" role="alert">
-				<?=$encrypted?>
-			</div>
+			<!--<div class="alert alert-primary" role="alert">-->
+				<?//=$encrypted?>
+			<!--</div>-->
 			<?
-		}
+		//}
 		?>
 	</form>
 </div>
